@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="kr">
+    <head>
+        <title>HW2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+
+            td #Name, #Password, #Birth, #Gender {
+                font-weight: bold; 
+            }
+            /* td 태그 속 id 'Name', 'Password', 'Birth', 'Gender' 의 폰트를 bold 로 */
+
+            #name, #password {
+                width: 200px;
+            }
+            /* Name 과 PW 입력창 width를 200px로 설정 */
+            
+            hr {
+                width: 270px;
+                margin-left :0;                
+            }
+            /* hr 가로선 길이 지정하고, 왼쪽으로 정렬 */
+
+            fieldset {
+                width: 300px;
+                text-align:center;
+            }       
+            /* fieldset 크기 설정하고, 안쪽을 가운데 정렬 */
+            
+            legend {
+                text-align: left;
+            }
+            /* Sign Up 텍스트 왼쪽으로 정렬 */
+            
+        </style>
+    </head>
+    <body>
+        <form>
+            <fieldset> <!-- fieldset 설정 -->
+                <legend>Sign Up</legend> <!-- fieldset 제목 설정 -->
+                
+                <table> <!-- table 태그 -->
+                    <tr>
+                        <td><label for="name" id="Name">Name</label></td>   <!-- Name 레이블과 입력창 -->
+                        <td><input id="name" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password" id="Password">PW</label></td> <!-- Password 레이블과 입력창 -->
+                        <td><input id="password" type="password"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="birth" id="Birth">Birth</label></td>  <!-- Birth 레이블 -->
+                        <td>
+                            <select>    <!-- Year을 Select 할 수 있는 보기 -->
+                                <optgroup>
+                                    <option value="" selected disabled>Year</option>
+                                    <option>1980</option>
+                                    <option>1981</option>
+                                    <option>1982</option>
+                                </optgroup>
+                            </select>
+                            <select>    <!-- Month를 Select 할 수 있는 보기 -->
+                                <optgroup>
+                                    <option value="" selected disabled>Month</option>
+                                    <option>Jan</option>
+                                    <option>Feb</option>
+                                    <option>Mar</option>
+                                    <option>Apr</option>
+                                </optgroup>
+                            </select>
+                            <select>    <!-- Day를 Select 할 수 있는 보기 -->
+                                <optgroup>
+                                    <option value="" selected disabled>Day</option> <!-- Day는 선택할 수 없다 -->
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </optgroup>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="gender" id="Gender">Gender</label></td>
+                        <td>
+                            <label for="man" id="Man">Male</label>  <!-- 남자 칸 -->
+                            <input id="man" type="radio" name="gender" value="m">
+                        
+                            <label for="woman" id="Woman">Female</label> <!-- 여자 칸 -->
+                            <input id="woman" type="radio" name="gender" value="w">
+                        </td>
+                    </tr>
+                </table>
+                <hr>
+                <input type="submit" value="Okay" id="Okay"> <!-- Okay 버튼 -->
+                <input type="submit" value="Cancel" id="Cancel"> <!-- Cancel 버튼 -->
+            </fieldset>
+        </form>
+    </body>
+</html>
