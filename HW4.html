@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>HW4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+        <script>
+
+            function cmdSelect() {  // 명령창 CMD
+                const selectList1 = document.getElementById("select1st")    // select 박스 1번째 (id, name)
+                const choice1 = document.getElementsByName("choice1")       
+                const selectList2 = document.getElementById("select2nd")    // select 박스 2번째 (id, name)
+                const choice2 = document.getElementsByName("choice2")
+                const selectList3 = document.getElementById("select3rd")    // select 박스 3번째 (id, name)
+                const choice3 = document.getElementsByName("choice3")
+                const selectList4 = document.getElementById("select4th")    // select 박스 4번째 (id, name)
+                const choice4 = document.getElementsByName("choice4")
+                const textWindow = document.getElementById("textW")         // 색깔, 텍스트 입력할 input 박스
+                const submit = document.getElementById("submitOK")          // OK 버튼
+                
+                // first 요소 (첫번째)
+                // First Title
+                if (selectList3.options[selectList3.selectedIndex].value=="first") {
+                    const first1 = document.getElementById("firstTitle")
+                    const first2 = document.getElementById("firstBody")
+                    if (selectList4.options[selectList4.selectedIndex].value=="title") {
+                        if (selectList1.options[selectList1.selectedIndex].value=="modify") {   // Modify -> First -> Title
+                            if (selectList2.options[selectList2.selectedIndex].value=="color") {    // Color 선택
+                                first1.style.color = textWindow.value;  // Color 입력
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="bgcolor") { // 배경색 선택
+                                first1.style.backgroundColor = textWindow.value;    // 배경색 입력
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="text") {    // 텍스트 선택
+                                first1.innerText = textWindow.value;    // 텍스트 입력
+                            }
+                        }
+                        else if (selectList1.options[selectList1.selectedIndex].value=="delete"){   // delete 선택한다면, 모든 것이 초기화 된다
+                            if (selectList2.options[selectList2.selectedIndex].value=="color") {
+                                first1.style.color="black"  // color는 검정색으로
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="bgcolor") {
+                                first1.style.backgroundColor="white"    // 배경색은 흰색으로
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="text") {
+                                first1.innerText = "First Title";   // 텍스트는 원래대로
+                            }
+                        }
+                    }
+
+                    // First Body
+                    else if (selectList4.options[selectList4.selectedIndex].value=="body") {
+                        if (selectList1.options[selectList1.selectedIndex].value=="modify") {   // Modify -> First -> Body
+                            if (selectList2.options[selectList2.selectedIndex].value=="color") {    // Color 선택
+                                first2.style.color = textWindow.value;  // Color 입력
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="bgcolor") { // 배경색 선택
+                                first2.style.backgroundColor = textWindow.value;    // 배경색 입력
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="text") {    // 텍스트 선택
+                                first2.innerText = textWindow.value;    // 텍스트 입력
+                            }
+                        }
+                        else if (selectList1.options[selectList1.selectedIndex].value=="delete"){   // delete 선택한다면, 모든 것이 초기화 된다
+                            if (selectList2.options[selectList2.selectedIndex].value=="color") {
+                                first2.style.color = "black";   // color는 검정색으로
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="bgcolor") {
+                                first2.style.backgroundColor = "white"; // 배경색은 흰색으로
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="text") {
+                                first2.innerText = "First Body";    // 텍스트는 원래대로
+                            }
+                        }
+                    }
+
+
+                }
+                // last 요소 (마지막)
+                // Last Title
+                else if (selectList3.options[selectList3.selectedIndex].value == "last") {
+                    const last1 = document.getElementById("fifthTitle")
+                    const last2 = document.getElementById("fifthBody")
+                    if (selectList4.options[selectList4.selectedIndex].value == "title") {
+                        if (selectList1.options[selectList1.selectedIndex].value == "modify") {     // Modify -> Last -> Title
+                            if (selectList2.options[selectList2.selectedIndex].value == "color") {  // Color 선택
+                                last1.style.color = textWindow.value;   // Color 입력
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value == "bgcolor") {   // 배경색 선택
+                                last1.style.backgroundColor = textWindow.value; // 배경색 입력
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value == "text") {  // 텍스트 선택
+                                last1.innerText = textWindow.value;     // 텍스트 입력
+                            }
+                        }
+                        else if (selectList1.options[selectList1.selectedIndex].value == "delete"){    // delete 선택한다면, 모든 것이 초기화 된다
+                            if (selectList2.options[selectList2.selectedIndex].value=="color") {
+                                last1.style.color="black"   // color는 검정색으로
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="bgcolor") {
+                                last1.style.backgroundColor="white"     // 배경색은 흰색으로
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="text") {
+                                last1.innerText = "Fifth Title";    // 텍스트는 원래대로
+                            }
+                        }
+                    }
+                    // Last Body
+                    else if (selectList4.options[selectList4.selectedIndex].value == "body") {
+                        if (selectList1.options[selectList1.selectedIndex].value == "modify") {     // Modify -> Last -> Body
+                            if (selectList2.options[selectList2.selectedIndex].value == "color") {  // Color 선택
+                                last2.style.color = textWindow.value;   // Color 입력
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value == "bgcolor") {   // 배경색 선택
+                                last2.style.backgroundColor = textWindow.value; // 배경색 입력
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value == "text") {  // 텍스트 선택
+                                last2.innerText = textWindow.value;     // 텍스트 입력
+                            }
+                        }
+                        else if (selectList1.options[selectList1.selectedIndex].value == "delete"){     // delete 선택한다면, 모든 것이 초기화 된다
+                            if (selectList2.options[selectList2.selectedIndex].value=="color") {
+                                last2.style.color="black"   // color는 검정색으로
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="bgcolor") {
+                                last2.style.backgroundColor="white"     // 배경색은 흰색으로
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="text") {
+                                last2.innerText = "Fifth Body";     // 텍스트는 원래대로
+                            }
+                        }
+                    }
+
+                }
+                // even 요소 (짝수 번째)
+                // Even Title
+                else if (selectList3.options[selectList3.selectedIndex].value=="even") {    
+                    const even2T = document.getElementById("secondTitle")
+                    const even2B = document.getElementById("secondBody")
+                    const even4T = document.getElementById("forthTitle")
+                    const even4B = document.getElementById("forthBody")
+                    if (selectList4.options[selectList4.selectedIndex].value=="title") {
+                        if (selectList1.options[selectList1.selectedIndex].value=="modify") {       // Modify -> Even -> Title
+                            if (selectList2.options[selectList2.selectedIndex].value=="color") {    // Color 선택
+                                even2T.style.color=textWindow.value;    // Color 입력
+                                even4T.style.color=textWindow.value;
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="bgcolor") {     // 배경색 선택
+                                even2T.style.backgroundColor=textWindow.value;  // 배경색 입력
+                                even4T.style.backgroundColor=textWindow.value;
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="text") {    // 텍스트 선택
+                                even2T.innerText=textWindow.value;      // 텍스트 입력
+                                even4T.innerText=textWindow.value;
+                            }
+                        }
+                        else if (selectList1.options[selectList1.selectedIndex].value=="delete"){   // delete 선택한다면, 모든 것이 초기화 된다
+                            if (selectList2.options[selectList2.selectedIndex].value=="color") {
+                                even2T.style.color="black"  // color는 검정색으로
+                                even4T.style.color="black"
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="bgcolor") {
+                                even2T.style.backgroundColor="white"    // 배경색은 흰색으로
+                                even4T.style.backgroundColor="white"
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="text") {
+                                even2T.innerText = "Second Title";  // 텍스트는 원래대로
+                                even4T.innerText = "Forth Title";
+                            }
+                        }
+                    }
+                    // Even Body
+                    else if (selectList4.options[selectList4.selectedIndex].value=="body") {
+                        if (selectList1.options[selectList1.selectedIndex].value=="modify") {   // Modify -> Even -> Body
+                            if (selectList2.options[selectList2.selectedIndex].value=="color") {    // Color 선택
+                                even2B.style.color=textWindow.value;    // Color 입력
+                                even4B.style.color=textWindow.value;
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="bgcolor") {     // 배경색 선택
+                                even2B.style.backgroundColor=textWindow.value;  // 배경색 입력
+                                even4B.style.backgroundColor=textWindow.value;
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="text") {    // 텍스트 선택
+                                even2B.innerText=textWindow.value;      // 텍스트 입력
+                                even4B.innerText=textWindow.value;
+                            }
+                        }
+                        else if (selectList1.options[selectList1.selectedIndex].value=="delete"){   // delete 선택한다면, 모든 것이 초기화 된다
+                            if (selectList2.options[selectList2.selectedIndex].value=="color") {    
+                                even2B.style.color="black"  // color는 검정색으로
+                                even4B.style.color="black"
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="bgcolor") {
+                                even2B.style.backgroundColor="white"    // 배경색은 흰색으로
+                                even4B.style.backgroundColor="white"
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="text") {
+                                even2B.innerText = "Second Body";   // 텍스트는 원래대로
+                                even4B.innerText = "Forth Body";
+                            }
+                        }
+                    }
+
+                }
+                // odd 요소 (홀수 번째)
+                // Odd Title
+                else if (selectList3.options[selectList3.selectedIndex].value=="odd") {
+                    const odd1T = document.getElementById("firstTitle")
+                    const odd1B = document.getElementById("firstBody")
+                    const odd3T = document.getElementById("thirdTitle")
+                    const odd3B = document.getElementById("thirdBody")
+                    const odd5T = document.getElementById("fifthTitle")
+                    const odd5B = document.getElementById("fifthBody")
+                    
+                    if (selectList4.options[selectList4.selectedIndex].value=="title") {
+                        if (selectList1.options[selectList1.selectedIndex].value=="modify") {   // Modify -> Odd -> Title
+                            if (selectList2.options[selectList2.selectedIndex].value=="color") {    // Color 선택
+                                odd1T.style.color=textWindow.value;     // Color 입력
+                                odd3T.style.color=textWindow.value;
+                                odd5T.style.color=textWindow.value;
+                                
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="bgcolor") {     // 배경색 선택
+                                odd1T.style.backgroundColor=textWindow.value;   // 배경색 입력
+                                odd3T.style.backgroundColor=textWindow.value;
+                                odd5T.style.backgroundColor=textWindow.value;
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="text") {    // 텍스트 선택
+                                odd1T.innerText=textWindow.value;       // 텍스트 입력
+                                odd3T.innerText=textWindow.value;
+                                odd5T.innerText=textWindow.value;
+                            }
+                        }
+                        else if (selectList1.options[selectList1.selectedIndex].value=="delete"){   // delete 선택한다면, 모든 것이 초기화 된다
+                            if (selectList2.options[selectList2.selectedIndex].value=="color") {
+                                odd1T.style.color="black"   // color는 검정색으로
+                                odd3T.style.color="black"
+                                odd5T.style.color="black"
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="bgcolor") {
+                                odd1T.style.backgroundColor="white"     // 배경색은 흰색으로
+                                odd3T.style.backgroundColor="white"
+                                odd5T.style.backgroundColor="white"
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="text") {
+                                odd1T.innerText = "First Title";    // 텍스트는 원래대로
+                                odd3T.innerText = "Third Title";
+                                odd5T.innerText = "Fifth Title";
+                            }
+                        }
+                    }
+                    // Odd Body
+                    else if (selectList4.options[selectList4.selectedIndex].value=="body") {
+                        if (selectList1.options[selectList1.selectedIndex].value=="modify") {       // Modify -> Odd -> Body
+                            if (selectList2.options[selectList2.selectedIndex].value=="color") {    // Color 선택
+                                odd1B.style.color=textWindow.value;     // Color 입력
+                                odd3B.style.color=textWindow.value;
+                                odd5B.style.color=textWindow.value;
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="bgcolor") {     // 배경색 선택
+                                odd1B.style.backgroundColor=textWindow.value;     // 배경색 입력
+                                odd3B.style.backgroundColor=textWindow.value;
+                                odd5B.style.backgroundColor=textWindow.value;
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="text") {    // 텍스트 선택
+                                odd1B.innerText=textWindow.value;       // 텍스트 입력
+                                odd3B.innerText=textWindow.value;
+                                odd5B.innerText=textWindow.value;
+                            }
+                        }
+                        else if (selectList1.options[selectList1.selectedIndex].value=="delete"){   // delete 선택한다면, 모든 것이 초기화 된다
+                            if (selectList2.options[selectList2.selectedIndex].value=="color") {
+                                odd1B.style.color="black"   // color는 검정색으로
+                                odd3B.style.color="black"
+                                odd5B.style.color="black"
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="bgcolor") {
+                                odd1B.style.backgroundColor="white"     // 배경색은 흰색으로
+                                odd3B.style.backgroundColor="white"
+                                odd5B.style.backgroundColor="white"
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="text") {
+                                odd1B.innerText = "First Body";     // 텍스트는 원래대로
+                                odd3B.innerText = "Third Body";
+                                odd5B.innerText = "Fifth Body";
+                            }
+                        }
+                    }
+
+                }
+                // all 요소 (모두)
+                // All Title
+                else if (selectList3.options[selectList3.selectedIndex].value=="all") {
+                    const all1T = document.getElementById("firstTitle")         // 모든(all) 요소의 id를 다 가지고 온다
+                    const all1B = document.getElementById("firstBody")
+                    const all2T = document.getElementById("secondTitle")
+                    const all2B = document.getElementById("secondBody")
+                    const all3T = document.getElementById("thirdTitle")
+                    const all3B = document.getElementById("thirdBody")
+                    const all4T = document.getElementById("forthTitle")
+                    const all4B = document.getElementById("forthBody")
+                    const all5T = document.getElementById("fifthTitle")
+                    const all5B = document.getElementById("fifthBody")
+                    if (selectList4.options[selectList4.selectedIndex].value=="title") {
+                        if (selectList1.options[selectList1.selectedIndex].value=="modify") {       // Modify -> All -> Title
+                            if (selectList2.options[selectList2.selectedIndex].value=="color") {    // Color 선택
+                                all1T.style.color=textWindow.value;     // Color 입력
+                                all2T.style.color=textWindow.value;
+                                all3T.style.color=textWindow.value;
+                                all4T.style.color=textWindow.value;
+                                all5T.style.color=textWindow.value;
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="bgcolor") {     // 배경색 선택
+                                all1T.style.backgroundColor=textWindow.value;       // 배경색 입력
+                                all2T.style.backgroundColor=textWindow.value;
+                                all3T.style.backgroundColor=textWindow.value;
+                                all4T.style.backgroundColor=textWindow.value;
+                                all5T.style.backgroundColor=textWindow.value;
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="text") {        // 텍스트 선택
+                                all1T.innerText=textWindow.value;       // 텍스트 입력
+                                all2T.innerText=textWindow.value;
+                                all3T.innerText=textWindow.value;
+                                all4T.innerText=textWindow.value;
+                                all5T.innerText=textWindow.value;
+                            }
+                        }
+                        else if (selectList1.options[selectList1.selectedIndex].value=="delete"){      // delete 선택한다면, 모든 것이 초기화 된다
+                            if (selectList2.options[selectList2.selectedIndex].value=="color") {
+                                all1T.style.color="black"       // color는 검정색으로
+                                all2T.style.color="black"
+                                all3T.style.color="black"
+                                all4T.style.color="black"
+                                all5T.style.color="black"
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="bgcolor") {
+                                all1T.style.backgroundColor="white"     // 배경색은 흰색으로
+                                all2T.style.backgroundColor="white"
+                                all3T.style.backgroundColor="white"
+                                all4T.style.backgroundColor="white"
+                                all5T.style.backgroundColor="white"
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="text") {
+                                all1T.innerText = "First Title";        // 텍스트는 원래대로
+                                all2T.innerText = "Second Title";
+                                all3T.innerText = "Third Title";
+                                all4T.innerText = "Forth Title";
+                                all5T.innerText = "Fifth Title";
+                            }
+                        }
+                    }
+                    // All Body
+                    else if (selectList4.options[selectList4.selectedIndex].value=="body") {
+                        if (selectList1.options[selectList1.selectedIndex].value=="modify") {       // Modify -> All -> Body
+                            if (selectList2.options[selectList2.selectedIndex].value=="color") {     // Color 선택
+                                all1B.style.color=textWindow.value;     // Color 입력
+                                all2B.style.color=textWindow.value;
+                                all3B.style.color=textWindow.value;
+                                all4B.style.color=textWindow.value;
+                                all5B.style.color=textWindow.value;
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="bgcolor") {     // 배경색 선택
+                                all1B.style.backgroundColor=textWindow.value;       // 배경색 입력
+                                all2B.style.backgroundColor=textWindow.value;
+                                all3B.style.backgroundColor=textWindow.value;
+                                all4B.style.backgroundColor=textWindow.value;
+                                all5B.style.backgroundColor=textWindow.value;
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="text") {        // 텍스트 선택
+                                all1B.innerText=textWindow.value;   // 텍스트 입력
+                                all2B.innerText=textWindow.value;
+                                all3B.innerText=textWindow.value;
+                                all4B.innerText=textWindow.value;
+                                all5B.innerText=textWindow.value;
+                            }
+                        }
+                        else if (selectList1.options[selectList1.selectedIndex].value=="delete"){   // delete 선택한다면, 모든 것이 초기화 된다
+                            if (selectList2.options[selectList2.selectedIndex].value=="color") {
+                                all1B.style.color="black"       // color는 검정색으로
+                                all2B.style.color="black"
+                                all3B.style.color="black"
+                                all4B.style.color="black"
+                                all5B.style.color="black"
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="bgcolor") {
+                                all1B.style.backgroundColor="white"     // 배경색은 흰색으로
+                                all2B.style.backgroundColor="white"
+                                all3B.style.backgroundColor="white"
+                                all4B.style.backgroundColor="white"
+                                all5B.style.backgroundColor="white"
+                            }
+                            else if (selectList2.options[selectList2.selectedIndex].value=="text") {
+                                all1B.innerText = "First Body";         // 텍스트는 원래대로
+                                all2B.innerText = "Second Body";
+                                all3B.innerText = "Third Body";
+                                all4B.innerText = "Forth Body";
+                                all5B.innerText = "Fifth Body";
+                            }
+                        }
+                    }
+                }
+            }
+
+        
+        </script>
+    </head>
+    <body> <!-- 기존에 주어진 코드 -->
+        <h2 id="firstTitle"> First Title </h1>
+        <p id="firstBody"> First Body <p>
+        <h2 id="secondTitle"> Second Title </h1>
+        <p id="secondBody"> Second Body <p>
+        <h2 id="thirdTitle"> Third Title </h1>
+        <p id="thirdBody"> Third Body <p>
+        <h2 id="forthTitle"> Forth Title </h1>
+        <p id="forthBody"> Forth Body <p>
+        <h2 id="fifthTitle"> Fifth Title </h1>
+        <p id="fifthBody"> Fifth Body <p>
+        <form action="HW4.html"> 
+            <b>CMD</b>
+            <select class="select1" name="choice1" id="select1st">
+                <option value="modify">Modify</option>
+                <option value="delete">Delete</option>
+            </select>
+            <select class="select2" name="choice2" id="select2nd">
+                <option value="color">Color</option>
+                <option value="bgcolor">BG-Color</option>
+                <option value="text">Text</option>
+            </select>
+            to
+            <input type='text' value="" name="inputText" id="textW"/>
+            where
+            <select class="select3" name="choice3" id="select3rd">
+                <option value="first">First</option>
+                <option value="last">Last</option>
+                <option value="even">Even</option>
+                <option value="odd">Odd</option>
+                <option value="all">All</option>
+            </select>
+            <select class="select4" name="choice4" id="select4th">
+                <option value="title">Title</option>
+                <option value="body">Body</option>
+            </select>
+            <input type="button" value="OK" id="submitOk" onclick="cmdSelect()"/>   <!-- submit으로 하면 버튼을 누를 때마다 매번 적용된 효과들이 초기화되어 버려서, 부득이하게 button 타입으로 변경 -->
+        </form>
+    </body>
+</html>
